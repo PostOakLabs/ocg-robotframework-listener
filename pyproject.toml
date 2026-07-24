@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocg-rf-listener"
+version = "0.1.0"
+description = "Robot Framework Listener API v3 -> OpenChainGraph (OCG) signed execution receipt"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+authors = [{ name = "Post Oak Labs" }]
+keywords = ["robotframework", "listener", "openchaingraph", "ocg", "audit", "receipt"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: Robot Framework",
+  "Framework :: Robot Framework :: Library",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+  "robotframework>=7.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/PostOakLabs/ocg-robotframework-listener"
+Standard = "https://ainumbers.co/chaingraph/standard/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
