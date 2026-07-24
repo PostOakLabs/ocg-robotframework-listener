@@ -1,0 +1,67 @@
+[
+  {
+    "policy_parameters": {},
+    "output_payload": {
+      "ocg_kind": "rf_execution_log@1",
+      "rf_output_format": "xml",
+      "result_file_sha256": "abc123",
+      "suite": {
+        "name": "Suite A",
+        "status": "PASS",
+        "starttime": "20260724 10:00:00.000",
+        "endtime": "20260724 10:00:05.000",
+        "elapsed": 5
+      },
+      "totals": {
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0
+      },
+      "tests": [
+        {
+          "name": "Test 1",
+          "status": "PASS",
+          "elapsed": 2.5
+        },
+        {
+          "name": "Test 2",
+          "status": "PASS",
+          "elapsed": 2.5
+        }
+      ]
+    },
+    "preimage": "{\"output_payload\":{\"ocg_kind\":\"rf_execution_log@1\",\"result_file_sha256\":\"abc123\",\"rf_output_format\":\"xml\",\"suite\":{\"elapsed\":5,\"endtime\":\"20260724 10:00:05.000\",\"name\":\"Suite A\",\"starttime\":\"20260724 10:00:00.000\",\"status\":\"PASS\"},\"tests\":[{\"elapsed\":2.5,\"name\":\"Test 1\",\"status\":\"PASS\"},{\"elapsed\":2.5,\"name\":\"Test 2\",\"status\":\"PASS\"}],\"totals\":{\"failed\":0,\"passed\":2,\"skipped\":0}},\"policy_parameters\":{}}",
+    "execution_hash": "3d0f7a88e7a0cecd833085445b93e7c6b58f8c296942bc9073163ec7af33579a"
+  },
+  {
+    "policy_parameters": {
+      "a": 1,
+      "b": 2
+    },
+    "output_payload": {
+      "z": 1,
+      "a": 2,
+      "nested": {
+        "b": 1,
+        "a": 2
+      },
+      "arr": [
+        3,
+        1,
+        2
+      ]
+    },
+    "preimage": "{\"output_payload\":{\"a\":2,\"arr\":[3,1,2],\"nested\":{\"a\":2,\"b\":1},\"z\":1},\"policy_parameters\":{\"a\":1,\"b\":2}}",
+    "execution_hash": "00d5d56ad113176fbd8eeaa0d8d48f3d0adfc55f6d3988bcaccd795539692cb1"
+  },
+  {
+    "policy_parameters": {},
+    "output_payload": {
+      "unicode": "héllo wörld é",
+      "empty_obj": {},
+      "empty_arr": []
+    },
+    "preimage": "{\"output_payload\":{\"empty_arr\":[],\"empty_obj\":{},\"unicode\":\"héllo wörld é\"},\"policy_parameters\":{}}",
+    "execution_hash": "339f19dd004901bb9a39884de94e70e3a4346e19c54a43e5fd2c5516d3c41bb0"
+  }
+]
