@@ -30,12 +30,20 @@ Offline / air-gapped mode (never calls the network):
 robot --listener "ocg_rf_listener.OcgReceiptListener:offline=True" tests/
 ```
 
+The default endpoint is `https://mcp.ainumbers.co/mcp`. To mint receipts against a different (e.g. self-hosted) worker, override it:
+
+```bash
+robot --listener "ocg_rf_listener.OcgReceiptListener:endpoint=https://mcp.example.com/mcp" tests/
+```
+
 After the run, next to your output file (`output.xml` by default):
 
 - **online:** `output.ocg-receipt.json` -- the signed OCG receipt.
 - **offline (or worker unreachable):** `output.ocg-hash.json` -- the normalized
   descriptor + `execution_hash`, so a receipt can be minted later from the
   exact same bytes.
+
+A receipt can be verified independently with [PostOakLabs/ocg-verify-action](https://github.com/PostOakLabs/ocg-verify-action) in CI (recomputes the `execution_hash`, checks the signature and Merkle anchor inclusion).
 
 `execution_hash` is also written to the RF console/syslog output on every run
 (see "Known limitation" below re: `log.html`).
